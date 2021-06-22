@@ -2,18 +2,25 @@
 #ifndef H_SSEXP
 #define H_SSEXP
 
+#include <stdlib.h>
+
+#define SSEXP_LOG(...)     do {\
+   printf ("%s:%i", __FILE__, __LINE__);\
+   printf (__VA_ARGS__);\
+} while (0)
+
+
 typedef struct ssexp_t ssexp_t;
 typedef struct ssexp_atom_t ssexp_atom_t;
 
-#ifdef __cplusplus
-extern "C" {
+#ifndef USE_STATIC
+#define USE_STATIC static
 #endif
 
-   ssexpt_t *ssexp_read (const char *src);
-
-#ifdef __cplusplus
-};
-#endif
-
+USE_STATIC
+ssexp_t *ssexp_parse_string (const char *src)
+{
+   return NULL;
+}
 
 #endif

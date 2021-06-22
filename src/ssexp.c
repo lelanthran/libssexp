@@ -1,5 +1,5 @@
 
-#define EXPORT_SYMBOLS
+#define USE_STATIC
 #include "ssexp.h"
-#endif
+
 
